@@ -1,0 +1,8 @@
+::sysinit:/etc/init.d/rcS
+::respawn:/bin/sh
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r
+tty1::respawn:/bin/sh
+tty2::respawn:/bin/sh
+tty3::respawn:/bin/sh
+tty4::respawn:/bin/sh

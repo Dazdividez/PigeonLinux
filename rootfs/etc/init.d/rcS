@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "Mounting filesystems..."
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mount -t tmpfs tmpfs /tmp
+
+echo "Setting up devices..."
+mdev -s
+
+echo "Setting hostname..."
+hostname custom-linux
+
+echo "Starting system..."
+exec /bin/sh
