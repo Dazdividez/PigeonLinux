@@ -1,10 +1,8 @@
 NAME="Pigeon Linux"
-ID="pigeon"
-PRETTY_NAME="Pigeon Linux 0.0.1"
-VERSION_ID="0.0.1"
 VERSION="0.0.1"
+ID="pigeon"
+VERSION_ID="0.0.1"
 VERSION_CODENAME=alpha
-# HOME_URL="https://dazdivi-kc.pro/"
-# SUPPORT_URL="https://dazdivi-kc.pro/support"
-# BUG_REPORT_URL="https://dazdivi-kc.pro/bugs"
-# PRIVACY_POLICY_URL="https://dazdivi-kc.pro/privacy"
+PRETTY_NAME="RED OS 8.0.2"
+ANSI_COLOR="0;36"
+BUILD_ID=20250826

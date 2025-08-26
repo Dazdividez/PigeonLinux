@@ -1,0 +1,35 @@
+#!/bin/busybox sh
+
+# Монтируем виртуальные файловые системы
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+# Создаем необходимые директории
+mkdir -p /dev/pts
+mkdir -p /dev/shm
+mkdir -p /run
+
+# Монтируем devpts для псевдотерминалов
+mount -t devpts devpts /dev/pts
+
+# Инициализируем устройство управления
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+/sbin/mdev -s
+
+# Теперь initramfs является нашей корневой файловой системой
+# Можем сразу перейти к запуску инициализации
+
+# Если нужно смонтировать дополнительные файловые системы, делаем это здесь
+# Например, для LiveCD на CD/DVD:
+# mount -t iso9660 /dev/sr0 /mnt
+
+# Проверяем наличие init в нашей корневой файловой системе
+if [ -x /sbin/init ]; then
+    # Запускаем init из initramfs
+    exec /sbin/init
+else
+    echo "Error: No init found in rootfs!"
+    echo "Dropping to emergency shell..."
+    exec /bin/sh
+fi
