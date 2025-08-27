@@ -24,12 +24,5 @@ echo /sbin/mdev > /proc/sys/kernel/hotplug
 # Например, для LiveCD на CD/DVD:
 # mount -t iso9660 /dev/sr0 /mnt
 
-# Проверяем наличие init в нашей корневой файловой системе
-if [ -x /sbin/init ]; then
-    # Запускаем init из initramfs
-    exec /sbin/init
-else
-    echo "Error: No init found in rootfs!"
-    echo "Dropping to emergency shell..."
-    exec /bin/sh
-fi
+# Запускаем init из initramfs
+exec /sbin/init

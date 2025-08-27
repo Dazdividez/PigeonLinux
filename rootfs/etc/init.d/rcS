@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo "=== Запуск rcS ==="
-exec >/tmp/rcs.log 2>&1
+echo "=== Start rcS ==="
 # Создание консольного устройства
 mount -n -t tmpfs none /dev
 mknod -m 622 /dev/console c 5 1
@@ -21,7 +20,6 @@ mount -t tmpfs tmpfs /tmp
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s
 
-# Установка hostname
-cat /etc/hostname | hostname
-
+echo "=== Start /etc/start.sh ==="
+/etc/start.sh
 

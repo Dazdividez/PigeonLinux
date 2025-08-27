@@ -1,1 +1,1 @@
-echo "Building BusyBox!" && ./bbsbx.sh  && echo "Building InitRamFS!" && ./birfs.sh && echo "Building kernel!" && ./bkernel.sh && echo "Prepare isodir" && ./prisodir.sh && echo "Making grub iso!" && ./ciso.sh
+echo "Building BusyBox!" && ./birfs.sh && echo "Building kernel!" && ./bkernel.sh && ./brfsiso.sh

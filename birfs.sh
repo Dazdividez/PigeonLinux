@@ -9,6 +9,7 @@ sudo mknod dev/tty c 5 0
 sudo mknod dev/tty0 c 4 0
 sudo mknod dev/tty1 c 4 1
 sudo mknod dev/tty2 c 4 2
+sudo mknod dev/fb0 c 29 0
 sudo mknod dev/ram0 b 1 0
 sudo mknod dev/ram1 b 1 1
 find . | cpio -o -H newc | gzip > ../temp/initramfs.cpio.gz
