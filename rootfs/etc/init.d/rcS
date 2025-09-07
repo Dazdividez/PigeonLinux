@@ -20,6 +20,6 @@ mount -t tmpfs tmpfs /tmp
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s
 
-echo "=== Start /etc/start.sh ==="
-/etc/start.sh
+echo "=== Start /etc/start.sh & ==="
+/etc/start.sh &
 
